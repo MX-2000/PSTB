@@ -1,0 +1,425 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{graphics}
+\usepackage{amsmath, amsfonts, amsthm, amssymb, amscd,a4wide}
+%\usepackage{algorithm}
+% \usepackage{algpseudocode}
+\usepackage{algorithmic}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{float}
+\usepackage{epstopdf}
+\usepackage{subcaption}
+\let\oldmarginpar\marginpar
+\renewcommand\marginpar[1]{\-\oldmarginpar[\raggedleft\footnotesize #1]%
+{\raggedright\footnotesize #1}}
+
+
+\floatname{algorithm}{Algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\barrer}[1]{%
+    \tikz[baseline] {
+        \node[inner sep=0pt, outer sep=0pt, anchor=base] (X) {\strut#1}; 
+        \draw[red, thick] (X.west) -- (X.east);
+    }
+}
+%\usepackage[linesnumbered,ruled]{algorithm2e}
+
+%%
+
+% ces lignes permet de ne pas mettre en couleurs les liens hypertextes dans le fichier PDF
+% cependant il est toujours possible de cliquer dessus
+%
+
+\usepackage{xcolor} %package pour les couleurs
+\usepackage{tikz} % package principal TikZ
+\usetikzlibrary{arrows} %librairieoptionnelle PGF
+\usepackage{adjustbox}
+
+\usepackage{slashed}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{linktoc = all}                % hyperref settings
+%\hypersetup{pdfborderstyle={/S/U/W 0.5}}  % hyperref settings
+\hypersetup{hidelinks}
+\hypersetup{bookmarksnumbered}
+\pdfstringdefDisableCommands{%
+  \def\({}%
+  \def\){}%
+  \def\\{}%
+  \def\infty{\042\036}%
+  \def\Tr{Tr }%
+}
+%%%%%%%%% 
+\newtheorem{definition}{Definition}[section]
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{theoremdefinition}[definition]{Theorem and Definition}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{HP}{Highlighted point}
+% 
+\numberwithin{equation}{section}
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\newcommand \be   {\begin{equation}}
+\newcommand \bel {\begin{equation}\label}
+\newcommand \ee   {\end{equation}}
+\newcommand \dist {{\mbox{\em dist }}}
+\newcommand \sgn {{\text{sgn }}}
+\newcommand \meas {{\text{meas }}}
+\newcommand \supp {{\text{supp }}}
+\newcommand \Id   {{\text{Id}}}
+\newcommand \smin {s^{\text{min}}}
+\newcommand \smax {s^{\text{max}}}
+\newcommand \lmin {{\lam^{\text{min}}}}
+\newcommand \lmax {{\lam^{\text{max}}}}
+\newcommand \RR    {\mathbb{R}}
+\newcommand \NN    {\mathbb{N}}
+\newcommand \ZZ    {\mathbb{Z}}
+\newcommand \QQ    {\mathbb{Q}}
+\newcommand \PP    {\mathbb{P}}
+\newcommand \EE    {\mathbb{E}}
+\newcommand \Rp    {\mathbb{R}^\plus }
+\newcommand \RRR    {\mathbf{R}}
+\newcommand \SSS    {\mathbf{S}}
+\newcommand \Scal    {\mathcal{S}}
+\newcommand \Pcal    {\mathcal{P}}
+\newcommand \Tbar {\overline T}
+\newcommand \Acal {\mathcal A}
+\newcommand \Bcal {\mathcal B}
+\newcommand \Ccal    {\mathcal{C}}
+\newcommand \Mcal    {\mathcal{M}}
+\newcommand \Lcal    {\mathcal{L}}
+\newcommand \Jcal    {\mathcal{J}}
+\newcommand \Kcal    {\mathcal{K}}
+\newcommand \Wbf {\mathbf W}
+\newcommand \Hcal    {\mathcal{H}}
+\newcommand \Tcal    {\mathcal{T}}
+\newcommand \lam   {\lambda}
+\newcommand \sig   {\sigma}
+\newcommand \gam   {\gamma}
+\newcommand \ubar   {\overline u}
+\newcommand \HH    {\mathcal{H}}
+\newcommand \CC    {\mathcal{C}}
+\newcommand \Ncal    {\mathcal{N}}
+\newcommand \DDD    {\mathcal{D}}
+\newcommand \RN    {{\RR^N}}
+\newcommand \eps   {\epsilon}
+\newcommand \Lam   {\Lambda}
+\newcommand \BB    {{\mathcal B}}
+\newcommand \WW    {{\mathcal W}}
+\newcommand \MM    {{M}}
+\newcommand \AAA    {{\mathcal A}}
+\newcommand \JJ    {{\mathcal J}}
+\newcommand \II    {{\mathcal I}}
+\newcommand \LLL    {{\mathbf L}}
+\newcommand \VVV    {{\mathbf V}}
+\newcommand \QQQ    {{\mathbf Q}}
+\newcommand \Rd    {{\mathbb{R}^d}}
+\newcommand \CCD    {{\mathbb{C}^D}}
+%
+\newcommand \del   {\partial}
+\newcommand \blam  {{\underline\lambda}}
+\newcommand \lamb  {{\overline\lambda}}
+\newcommand \Bzero    {{\mathcal{B}_{\delta_0}}}
+\newcommand \Bone    {{\mathcal{B}_{\delta_1}}}
+\newcommand \Btwo    {{\mathcal{B}_{\delta_2}}}
+\newcommand \la         \langle
+\newcommand \ra     \rangle
+\newcommand \ab     {\overline a}
+\newcommand \mmm  {p}
+
+\newcommand \Ybf {\mathbf Y} 
+\newcommand \Sbf {\mathbf S} 
+\newcommand \hbf {\mathbf h} 
+
+\newcommand \Sbar {\overline S}
+\newcommand \Aund {\underline{\Acal}}
+\newcommand \Aove {\overline{\Acal}}
+
+\newcommand \plus {+}
+
+\newcommand \RD {{\mathbb R}^D}
+
+
+\usepackage{mathrsfs}
+
+%*************************************************************************************
+\usepackage{authblk}
+
+
+\setcounter{Maxaffil}{0}
+\renewcommand\Affilfont{\itshape\small}
+
+
+
+
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{\vspace{-2.5em}}
+
+\title{\textbf{Capstone Plan}}
+\author[1]{Aguirre Max}
+\affil[1]{PSTB, Paris, France}
+
+\date{\today} % Current date, or specify manually
+
+\begin{document}
+
+\maketitle % Generate title
+
+\begin{abstract}
+We propose a self-contained, detailed, description of a scalable standardized kernel (RKHS) approach to popular reinforcement learning algorithms, where agents interact off-line with environments having continuous states and discrete actions spaces, dealing with possibly unstructured datas. These algorithms, namely Q-Learning, Actor Critic, Policy Gradient, Hamilton-Jacobi-Bellman (HJB) and Heuristic Controls, are implemented with a RKHS library \cite{codpy} using default settings. We show that this approach to reinforcement learning is accurate, robust, efficient and versatile, as we benchmark our algorithms in this paper on simple games, and use them as a baseline for our applications.
+\end{abstract}
+
+\hypertarget{Introduction}{%
+\section{Introduction}\label{Introduction}}
+
+We look at the application of Kernel (RKHS) methods to Reinforcement Learning, with potential application in numerous fields, for instance, finance.
+
+\hypertarget{Background}{%
+\section{Background}\label{Background}} 
+
+In here we do a litterature review and give the main background ideas for Reinforcement learning, Kernel methods, main algorithms and their limitations
+
+\hypertarget{Reinforcement-learning}{%
+\subsection{Reinforcement Learning}\label{Reinforcement-learning}}
+
+\hypertarget{General framework for RL}{%
+\subsubsection{General Framework for RL}\label{General framework for RL}}
+
+\hypertarget{Bellman Equations}{%
+\subsubsection{Bellman Equations}\label{Bellman Equations}}
+
+
+\hypertarget{Algorithms}{%
+\subsection{Algorithms}\label{Algorithms}}
+
+\hypertarget{Q-learning}{%
+\subsubsection{Q-learning}\label{Q-learning}}
+
+\hypertarget{Policy Gradient}{%
+\subsubsection{Policy Gradient}\label{Policy Gradient}}
+
+\subsubsection{Hamilton Jacobi Bellman}\label{HJB}
+
+\hypertarget{Heuristic-Controlled Learning}{%
+\subsubsection{Heuristic-Controlled Learning}\label{Heuristic-Controlled Learning}}
+
+\hypertarget{Kernel Reminder}{%
+\subsection{Kernel Reminder}\label{Kernel Reminder}}
+
+\hypertarget{Kernel RL Algorithms}{%
+\section{Kernel RL Algorithms}\label{Kernel RL Algorithms}}
+
+Here we describe the algorithms from a numerical point of view. 
+
+\hypertarget{Kernel RL framework}{%
+\subsection{Kernel RL framework}\label{Kernel RL framework}}
+
+\hypertarget{Kernel Q-Learning}{%
+\subsection{Kernel Q-Learning}\label{Kernel Q-Learning}}
+
+\hypertarget{Kernel-Based Q-Value Gradient Estimation}{%
+\subsection{Kernel-Based Q-Value Gradient Estimation}\label{Kernel-Based Q-Value Gradient Estimation}}
+
+
+\hypertarget{Actor-Critic with Bellman Residual Advantage}{%
+\subsection{Kernel Actor-Critic with Bellman Residual Advantage}\label{AC}}
+
+\subsection{Kernelized Hamilton Jacobi Bellman}\label{KHJB}
+
+\hypertarget{Heuristic-controlled Learning}{%
+\subsection{Heuristic-controlled Learning}\label{Heuristic-controlled Learning}}
+
+\section{Experiments}\label{Experiments}
+
+\hypertarget{Cartpole}{%
+\subsection{Cartpole}\label{Cartpole}}
+
+\hypertarget{Lunar-Lander}{%
+\subsection{Lunar-Lander}\label{Lunar-Lander}}
+
+\hypertarget{Conclusion}{%
+\section{Conclusion}\label{Conclusion}}
+
+
+\newpage
+
+\begin{thebibliography}{1}
+
+\bibitem{Chowdhury2017proceedings} 
+{\sc Sayak Ray Chowdhury and Aditya Gopalan}, 
+{\sl On Kernelized Multi-armed Bandits.}
+Proceedings of the 34th International Conference on Machine Learning, in Proceedings of Machine Learning Research - 70 , pp 844-853 
+
+\bibitem{Cuturi:2013} 
+{\sc M. Cuturi,} 
+Sinkhorn distances: lightspeed computation of optimal transport, 
+ Advances in Neural Information
+Processing Systems 26: 27th Annual Conference on Neural Information Processing Systems 2013, C.J.C. Burges, L. Bottou, Z. Ghahramani, and K.Q. Weinberger, editors, 
+Proceedings of a meeting held December 5-8, 2013, Lake Tahoe, Nevada, United States, pp. 2292--2300.
+
+
+\bibitem{Mania2018} 
+{\sc Mania, H., Guy, A., and Recht, B.}, 
+Simple random search of
+static linear policies is competitive for reinforcement learning. In Advances in Neural Information Processing Systems, 1800–1809.
+
+
+\bibitem{ChengHC2021} 
+{\sc Cheng, Ching-An and Kolobov, Andrey and Swaminathan, Adith}, 
+{\sl Heuristic-guided reinforcement learning.}
+Proceedings of the 35th International Conference on Neural Information Processing Systems - 1038, pp 13550 - 13563
+
+\bibitem{mnih2015}{
+Mnih et al. (2015)}{"Human-level control through deep reinforcement learning"
+}
+
+\bibitem{vanhasselt2016}{
+Van Hasselt, Guez, \& Silver (2016) "Deep Reinforcement Learning with Double Q-learning"}
+
+\bibitem{Reinforce} 
+{\sc Williams, Ronald J.}, 
+{\sl Simple statistical gradient-following algorithms for connectionist reinforcement learning}
+Machine Learning, 8(3-4): pp 229-256
+
+\bibitem{SF2023}{Sing-Yuan Yeh, Fu-Chieh Chang, Chang-Wei Yueh, Pei-Yuan Wu, Alberto Bernacchia, Sattar Vakili}{Sample Complexity of Kernel-Based Q-Learning}
+
+\bibitem{PLF-JMM-Wilmott}
+{\sc P.G. LeFloch and J.-M. Mercier,} 
+Extrapolation and generative algorithms for three applications in finance,
+Wilmott, vol. 2024, iss. 133, 2024.
+
+\bibitem{codpy}
+{\sc P.G. LeFloch, J.-M. Mercier, and S. Miryusupov,}
+CodPy: a Python library for numerics, machine learning, and statistics.
+arXiv:2402.07084
+
+
+\bibitem{LeMeMi:2024}
+{\sc P.G. LeFloch, J.-M. Mercier, and S. Miryusupov,}
+A class of kernel-based scalable algorithms for data science. arXiv:2410.14323
+
+\bibitem{LeMe:2017}
+{\sc P.G. LeFloch, J.-M. Mercier, }
+A new method for solving Kolmogorov equations in mathematical finance,
+DOI : 10.1016/j.crma.2017.05.003
+
+\bibitem{watkins1992} 
+{\sc Watkins, C. J. C. H., \& Dayan, P. }, 
+{\sl Q-learning.}
+Machine Learning, 8(3-4), pp 279–292.
+
+\bibitem{FuMePrNaSh} 
+{\sc Watkins, C. J. C. H., \& Dayan, P. }, 
+Why Should I Trust You, Bellman? The Bellman Error is a Poor Replacement for Value Error, arXiv:2201.12417 [cs.LG]
+, https://doi.org/10.48550/arXiv.2201.12417
+
+
+\bibitem{DQN} 
+{\sc Volodymyr Mnih, Koray Kavukcuoglu,David Silver, Alex Graves, Ioannis Antonoglou, Daan Wierstra and Martin A. Riedmiller }, 
+{\sl Playing Atari with Deep Reinforcement Learning.} 
+
+\bibitem{sutton2018} 
+{\sc Sutton, R. S., \& Barto, A. G.}, 
+{\sl Reinforcement learning: An introduction (2nd ed.)}
+MIT Press.
+
+\bibitem{BTA}
+{\sc A. Berlinet and C. Thomas-Agnan,}
+{\it Reproducing kernel Hilbert spaces in probability and statistics,}
+Springer Science, Business Media, LLC, 2004.
+
+\bibitem{silver2014}
+{
+Silver et al. (2014) "Deterministic Policy Gradient Algorithms"
+}
+
+\bibitem{PPO} 
+{\sc John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford and Oleg Klimov}, 
+{\sl Proximal Policy Optimization Algorithms}
+ arXiv:1707.06347, 
+https://doi.org/10.48550/arXiv.1707.06347
+
+\bibitem{ormoneit2002}{Ormoneit, Sen}{
+Kernel-Based Value Function Approximation (2002)
+}
+
+\bibitem{engel2003}{Engel et al.}{Gaussian Process Temporal Difference Learning (GPTD) (2003)}
+
+\bibitem{Xu2007}
+{\sc X. Xu, D. Hu and X. Lu,}
+{\it Kernel-Based Least Squares Policy Iteration for Reinforcement Learning,}
+in IEEE Transactions on Neural Networks, vol. 18, no. 4, pp. 973-992, July 2007, doi: 10.1109/TNN.2007.899161. 
+
+\end{thebibliography}
+
+\hypertarget{APPENDIX}{%
+\section{APPENDIX}\label{APPENDIX}}
+
+
+\end{document}
